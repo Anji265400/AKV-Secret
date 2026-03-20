@@ -1,8 +1,32 @@
 FROM python:3.9-slim
 
+# Metadata labels
+LABEL Name="devsecops-app"
+LABEL Version="1.0"
+LABEL Maintainer="anjibabu"
+
+# Install curl for healthcheck
+RUN apt-get update && apt-get install -y curl
+
+# Create non-root user
+RUN useradd -m appuser
+
 WORKDIR /app
+
+# Copy app
 COPY app/ /app
 
-RUN pip install -r requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Expose port
+EXPOSE 5000
+
+# Switch user
+USER appuser
+
+# Healthcheck
+HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1
+
+# Start app
 CMD ["python", "app.py"]
