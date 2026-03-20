@@ -67,14 +67,5 @@ jobs:
 
     # 🔹 Step 9: Deploy to Azure Container Instance
     - name: Deploy to Azure
-      run: |
-        az container create \
-          --resource-group test-group \
-          --name myapp \
-          --image testacr2654.azurecr.io/myapp:latest \
-          --registry-login-server testacr2654.azurecr.io \
-          --registry-username $username \
-          --registry-password $password \
-          --dns-name-label myapp-demo-$RANDOM \
-          --ports 5000
-          --os-type Linux
+     - name: Deploy to Azure
+       run: az container create --resource-group test-group --name myapp --image testacr2654.azurecr.io/myapp:latest --registry-login-server testacr2654.azurecr.io --registry-username $username --registry-password $password --dns-name-label myapp-demo-$RANDOM --ports 5000 --os-type Linux
