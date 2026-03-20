@@ -72,5 +72,8 @@ jobs:
           --resource-group test-group \
           --name myapp \
           --image testacr2654.azurecr.io/myapp:latest \
+          --registry-login-server testacr2654.azurecr.io \
+          --registry-username $username \
+          --registry-password $password \
           --dns-name-label myapp-demo-$RANDOM \
           --ports 5000
