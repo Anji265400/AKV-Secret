@@ -16,3 +16,5 @@ resource "azurerm_resource_group" "rg" {
   name     = "test-group2654"
   location = "East US"
 }
+
+#test
