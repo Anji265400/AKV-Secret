@@ -77,3 +77,4 @@ jobs:
           --registry-password $password \
           --dns-name-label myapp-demo-$RANDOM \
           --ports 5000
+          --os-type Linux
