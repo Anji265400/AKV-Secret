@@ -5,4 +5,4 @@ COPY app/ /app
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "app.py"]py app/app.py
+CMD ["python", "app.py"]
