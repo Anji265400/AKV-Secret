@@ -77,4 +77,6 @@ jobs:
             --registry-password "${{ steps.kv.outputs.password }}" \
             --dns-name-label myapp-demo-$RANDOM \
             --ports 5000 \
+            -- cpu 1 \
+            -- memory 1.5 \
             --os-type Linux
