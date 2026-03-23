@@ -20,13 +20,13 @@ COPY app/ /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port
-EXPOSE 5000
+EXPOSE 6000
 
 # Switch user
 USER appuser
 
 # Healthcheck
-HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1
+HEALTHCHECK CMD curl --fail http://localhost:6000/ || exit 1
 
 # Start app
 CMD ["python", "app.py"]
