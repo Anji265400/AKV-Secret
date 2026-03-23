@@ -76,6 +76,7 @@ jobs:
             --registry-username "${{ steps.kv.outputs.username }}" \
             --registry-password "${{ steps.kv.outputs.password }}" \
             --dns-name-label myapp-demo-$RANDOM \
+            --ip-address Public \
             --ports 5000 \
             --cpu 1 \
             --memory 1.5 \
